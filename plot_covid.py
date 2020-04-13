@@ -27,7 +27,7 @@ colors = {'Canada':'#045275', 'China':'#089099', 'France':'#7CCBA2', 'Germany':'
 
 plt.style.use('Solarize_Light2')
 
-plot = covid.plot(figsize=(14,8), color=list(colors.values()), linewidth=4, legend=False)
+plot = covid.plot(figsize=(14,8), color=list(colors.values()), linewidth=4, legend=True, logy=False)
 plot.yaxis.set_major_formatter(matplotlib.ticker.StrMethodFormatter('{x:,.0f}'))
 plot.grid(color='#d4d4d4')
 plot.set_xlabel('Date')
@@ -49,7 +49,7 @@ percapita = covid.copy()
 for country in list(percapita.columns):
     percapita[country] = percapita[country]/populations[country]*100000
 
-percapitaplot = percapita.plot(figsize=(14,8), color=list(colors.values()), linewidth=4, legend=False)
+percapitaplot = percapita.plot(figsize=(14,8), color=list(colors.values()), linewidth=4, legend=True)
 percapitaplot.grid(color='#d4d4d4')
 percapitaplot.set_xlabel('Date')
 percapitaplot.set_ylabel('# of Cases per 100,000 People')
