@@ -10,7 +10,7 @@ countries = ['Canada', 'China', 'France', 'Germany', 'Iceland', 'Italy', 'Morocc
 df = df[df['Country'].isin(countries)]
 
 # Modify the start date to zoom in on more recent data. Earliest day of data is 1-22-2020. 
-start_date='3-23-2020' # Past 3 weeks
+start_date='3-26-2020' # Past 3 weeks
 df = df[df.Date >= start_date]
 
 df['Cases'] = df[['Confirmed', 'Recovered', 'Deaths']].sum(axis=1)
@@ -39,7 +39,7 @@ for country in list(colors.keys()):
 plot.text(x = covid.index[1], y = int(covid.max().max())+80000, s = "COVID-19 Cases by Country", fontsize = 15, weight = 'bold', alpha = .75)
 plot.text(x = covid.index[1], y = int(covid.max().max())+40000, s = "For the USA, China, Germany, Iceland, Italy, France, United Kingdom, Canada, and Morocco\nIncludes Current Cases, Recoveries, and Deaths", fontsize = 10, alpha = .75)
 # Think of a way to autoscale these ^ text placements
-plot.text(x = covid.index[1], y = -100000,s = 'Source: https://github.com/datasets/covid-19/blob/master/data/countries-aggregated.csv\nModified from Nik Piepenbreier', fontsize = 6)
+plot.text(x = covid.index[1], y = -150000,s = 'Source: https://github.com/datasets/covid-19/blob/master/data/countries-aggregated.csv\nModified from Nik Piepenbreier', fontsize = 6)
 
 plt.tight_layout()
 plt.show()
@@ -57,7 +57,7 @@ for country in list(colors.keys()):
     percapitaplot.text(x = percapita.index[-1], y = percapita[country].max(), c = colors[country], s = country, weight = 'bold')
 percapitaplot.text(x = percapita.index[1], y = percapita.max().max()+80, s = "Per Capita COVID-19 Cases by Country", fontsize = 15, weight = 'bold', alpha = .75)
 percapitaplot.text(x = percapita.index[1], y = percapita.max().max()+40, s = "For the USA, China, Germany, Iceland, France, United Kingdom, Canada, and Morocco\nIncludes Current Cases, Recoveries, and Deaths", fontsize = 10, alpha = .75)
-percapitaplot.text(x = percapita.index[1], y = percapita.min().min()-100,s = 'Source: https://github.com/datasets/covid-19/blob/master/data/countries-aggregated.csv\nModified from Nik Piepenbreier', fontsize = 6)
+percapitaplot.text(x = percapita.index[1], y = percapita.min().min()-150,s = 'Source: https://github.com/datasets/covid-19/blob/master/data/countries-aggregated.csv\nModified from Nik Piepenbreier', fontsize = 6)
 
 plt.tight_layout()
 plt.show()
