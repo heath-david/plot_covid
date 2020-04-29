@@ -10,7 +10,7 @@ countries = ['Canada', 'China', 'France', 'Germany', 'Iceland', 'Italy', 'Morocc
 df = df[df['Country'].isin(countries)]
 
 # Modify the start date to zoom in on more recent data. Earliest day of data is 1-22-2020. 
-start_date='1-22-2020' # Past 3 weeks
+start_date='4-07-2020' # Past 3 weeks
 df = df[df.Date >= start_date]
 
 df['Cases'] = df[['Confirmed', 'Recovered', 'Deaths']].sum(axis=1)
